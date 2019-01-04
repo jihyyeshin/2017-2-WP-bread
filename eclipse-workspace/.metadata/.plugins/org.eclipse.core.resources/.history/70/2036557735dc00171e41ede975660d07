@@ -1,0 +1,53 @@
+package pj1;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/NoticeLogin")
+
+public class NoticeLogin extends HttpServlet {
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html");
+response.setCharacterEncoding("UTF-8");
+
+PrintWriter out = response.getWriter();
+//요청시 매개변수 "id"를 가져와 id 넣는다
+/*String id = request.getParameter("id");
+//요청시 매개변수 "pw"를 가져와 pw 넣는다
+
+String pw = request.getParameter("pw");
+*/
+//Dao dao2 = new Dao();
+//if(dao2.login(id, pw)){
+/*Cookie[] cookies = request.getCookies();
+for (Cookie c : cookies) {
+if (c.getName().equals("admin")) {*/
+String id="";
+id = (String)session.getAttribute("id");            // request에서 id 파라미터를 가져온다
+
+if(id==null||id.equals("")){                            // id가 Null 이거나 없을 경우
+
+response.sendRedirect("notice_admin.jsp");    // 로그인 페이지로 리다이렉트 한다.
+}
+else
+{response.sendRedirect("notice.jsp");    // 로그인 페이지로 리다이렉트 한다.
+}
+//id,pw가 맞다면 메세지로 success 출력
+/*RequestDispatcher rd = request.getRequestDispatcher("/notice_admin.jsp");
+rd.forward(request, response);
+}else{
+//id,pw가 아니다면 메세지로 fail 출력
+RequestDispatcher rd = request.getRequestDispatcher("/notice.jsp");
+rd.forward(request, response);*/
+}
+}

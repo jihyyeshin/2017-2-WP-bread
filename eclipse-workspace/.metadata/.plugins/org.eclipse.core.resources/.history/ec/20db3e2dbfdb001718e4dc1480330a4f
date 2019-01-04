@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="container">
+        <div>
+            <ul class="h">
+                <li class="h"><a class="h" href="home.jsp">HOME</a></li>
+                <li class="h"><a class="h" href="content.jsp">CONTENT</a></li>
+                <li class="h"><a class="h" href="order.jsp">ORDER</a></li>
+                <li class="h"><a class="h" href="about.jsp">ABOUT</a></li>
+            </ul>
+        </div>
+        <br /><br /><br />
+        <div id="main">
+           <%=request.getAttribute("msg")%>
+        </div>
+    </div>
+</body>
+</html>
+</body>
+</html>

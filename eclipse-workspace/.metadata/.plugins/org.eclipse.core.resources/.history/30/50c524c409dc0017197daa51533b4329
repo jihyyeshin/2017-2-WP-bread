@@ -1,0 +1,131 @@
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+	pageEncoding="euc-kr"%>
+<%@ page import="java.sql.*"%>
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<!-- calendar -->
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css"
+	type="text/css">
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#date1").datepicker();
+	});
+</script>
+<title>Mr.Bread</title>
+</head>
+
+<body>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<div id="container">
+		<div>
+			<ul class="h">
+				<li class="h"><a class="h" href="home.jsp">HOME</a></li>
+				<li class="h"><a class="h" href="content.jsp">CONTENT</a></li>
+				<li class="h"><a class="h" href="order.jsp">ORDER</a></li>
+				<li class="h"><a class="h" href="about.jsp">ABOUT</a></li>
+				<li class="h"><a class="h" href="notice.jsp">NOTICE</a></li>
+			</ul>
+		</div>
+		<br /> <br /> <br />
+		<div id="main">
+			<div id="part1">
+				<center>
+					<form method="post" action="cart-db.jsp">
+						<p class="three">your name &nbsp;&nbsp;&nbsp; password
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bread
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							date
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+						<input type="text" name="yourname" size="12" /> <input
+							type="password" name="password" size="12" /> <select
+							name="bread">
+							<option value="Magic Mocha Cream Bread">Magic Mocha</option>
+							<option value="Rice Topping Cheese Bread">Rice Cheese</option>
+							<option value="Pumpkin Bread">Pumpkin Bread</option>
+							<option value="Chocolate Twist">Choco Twist</option>
+							<option value="Chocolate Scone">Choco Scone</option>
+							<option value="Twisted Bread Stick">Twisted Bread</option>
+						</select>
+						<!--<input type="text" name="bread" size="12"/>-->
+						<input type="text" name="date" id="date1" size="12" /> <input
+							type="text" name="number" size="12" /> <input type="submit"
+							value="cart">
+						<%
+							String flag = request.getParameter("flag");
+							if ("r".equals(flag)) {
+						%>
+						<input type="hidden" name="ref"
+							value="<%=request.getParameter("ref")%>"> <input
+							type="hidden" name="reply" value="y">
+						<%
+							} else
+						%>
+						<input type="hidden" name="reply" value="n">
+					</form>
+				</center>
+
+			</div>
+			<div class="column">
+				<center>
+					<br> <br>
+					<div class="div1">
+						<br>
+						<p class="p4">
+							<b>Order your fresh bread!<b />
+						</p>
+						<br>
+						<form method="post" action="home.jsp">
+							<input type="submit" value="Admin Logout" class="button button2">
+							<%
+								String id = "";
+								String pw = "";
+								%>
+						</form>
+						<form method="post" action="noticeadmin.jsp">
+							<br>
+							<p class="p4">
+								<b>NOTICE<b />
+							</p>
+							<br> <input type="submit" value="NOTICE"
+								class="button button2"> <br>
+						</form>
+						<br>
+					</div>
+
+					<p class="p6">
+						<br> <br> <br> <br>How to use Mr. Bread<br>
+						<br> 1. Choose the name of the bread, <br> the date of
+						reservation, <br> and the number of the bread you want.<br>
+						<br> 2. Choose the name of the bread, <br> the date of
+						reservation, <br> and the number of the bread you want.<br>
+						<br> 3. Press the ' Cast ' button <br> to enter the
+						information in the shopping cart.<br> <br> 4. You can
+						check the shopping <br> cart information on the ' Order '
+						page.<br> <br> 5. Visit the date of your reservation <br>
+						and take the bread you ordered. <br> <br> <br> <br>
+					</p>
+				</center>
+				<br />
+			</div>
+			<div id="part2">
+				<div>
+					<marquee width="auto" direction="right" behavior="scroll"
+						scrollamount="7" scrolldelay="10" loop="10" hspace="5" vspace="5">
+						<img src="1.jpg"> <img src="4.jpg"> <img src="2.jpg">
+						<img src="3.jpg"> <img src="5.jpg">
+					</marquee>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

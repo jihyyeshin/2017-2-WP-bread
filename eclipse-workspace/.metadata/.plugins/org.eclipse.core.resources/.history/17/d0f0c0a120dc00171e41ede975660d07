@@ -1,0 +1,216 @@
+@charset "EUC-KR";
+/* home.jsp의 배경 화면 구성 */
+body {
+   background-color: antiquewhite;
+   background-image: url("file.jpg");
+   background-position: center top;
+   background-repeat: no-repeat;
+   background-size: 68%;
+}
+/* home.jsp의 배경 화면 제외한 페이지 구성 */
+#container {
+   width: auto;
+   margin: auto;
+   padding: 20px;
+}
+/* bread, calendar, number 구성 */
+#part1 {
+   width: 100%;
+   height: auto;
+   padding-top: 1%;
+   padding-bottom: 1%;
+   margin: auto;
+   background-color: #b76d39;
+}
+/* 화면 하단 사진 슬라이스 구성 */
+#part2 {
+   width: 100%;
+   height: auto;
+   margin: auto;
+   background-color: #b76d39;
+}
+/* home.jsp의 main 단락 구성 */
+#main {
+   width: 69.9%;
+   height: auto;
+   margin: auto;
+   padding-bottom: 50px;
+   background-color: bisque;
+}
+/* menu bar 전체적인 구성 */
+ul.h {
+   margin-top: 350px;
+   margin-left: 256px;
+}
+/* 각각 menu 구성 */
+ul.h li.h {
+   width: 16.46%;
+   list-style-type: none;
+   overflow: hidden;
+   position: center;
+   background-color: #b76d39;
+   float: left;
+   position: center;
+}
+      ul.h li{ 
+	     float: left;
+		 width: 260px;
+		 height: 48px;
+		 background-color: #555;
+		 position: relative;
+		 }
+ul.h li ul.sub{
+position: absolute;
+}
+
+/* 각각 menu의 글씨 구성 */
+li.h a.h {
+   display: block;
+   font-family: Cambria;
+   color: white;
+   text-align: center;
+   padding: 15px 15px;
+   text-decoration: none;
+}
+/* 각각 menu에 마우스를 올려놓았을 때의 동작 */
+li.h a.h:hover {
+   background-color: white;
+   color: #b76d39;
+}
+/* 본문 내용 구성 글씨 "brand story" */
+.p1 {
+   font-family: Cambria;
+   font-size: 40px;
+   color: maroon;
+   text-align: center;
+   margin: 0px 0px 0px 0px;
+}
+
+#p2 {
+   width: auto;
+   height: auto;
+   padding-left: 20px;
+   margin: 70px 0px 20px 20px;
+   border-left: 3px solid darkred;
+}
+
+.p2 {
+   font-family: Cambria;
+   font-size: 24px;
+   color: darkred;
+   text-align: left;
+}
+
+#p3 {
+   width: auto;
+   height: auto;
+   padding-right: 20px;
+   margin: 70px 30px 70px 30px;
+   border-right: 3px solid darkred;
+}
+
+.p3 {
+   font-family: Cambria;
+   font-size: 24px;
+   color: darkred;
+   text-align: right;
+}
+
+.img1 {
+   width: 460px;
+   height: 360px;
+   margin: 70px 30px 20px 30px;
+}
+
+.img2 {
+   width: 460px;
+   height: 360px;
+   margin: 70px 0px 70px 20px;
+}
+/* 단 구성 */
+.column {
+   column-count: 2;
+   column-width: 100px;
+   column-rule: 1px solid grey;
+   -webkit-column-count: 2;
+   -webkit-column-width: 100px;
+   -webkit-column-rule: 1px solid grey;
+   -moz-column-count: 2;
+   -moz-column-width: 100px;
+   -moz-column-rule: 1px solid grey;
+   width: 1350px;
+}
+
+.three {
+   font-family: Cambria;
+   color: white;
+   font-size: 20px;
+   align: center;
+   margin: 0px 0px 0px 0px;
+}
+/*about.jsp에서 사용하는 map*/
+#map {
+   visibility: hidden;
+   pading: 50px 50px 50px 50px;
+}
+
+/*login button에 사용*/
+.button {
+   background-color: #b76d39;
+   font-family: Cambria;
+   width: auto;
+   border: none;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+   cursor: pointer;
+   -webkit-transition-duration: 0.4s; /* Safari */
+   transition-duration: 0.4s;
+   border: none;
+}
+
+.button2:hover {
+   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0
+      rgba(0, 0, 0, 0.19);
+}
+/*login 글씨*/
+.p4 {
+   font-family: Cambria;
+   font-size: 30px;
+   color: maroon;
+   text-align: center;
+   margin: 0px 0px 0px 0px;
+}
+/*작은글씨*/
+.p5 {
+   font-family: Cambria;
+   font-size: 20px;
+   color: maroon;
+   text-align: center;
+   margin: 0px 0px 0px 0px;
+}
+.p6 {
+   font-family: Cambria;
+   font-size: 15px;
+   color: #6c5c4a;
+   text-align: center;
+   margin: 0px 0px 0px 0px;
+}
+.p7 {
+   font-family: Cambria;
+   font-size: 30px;
+   color: antiquewhite;
+   text-align: center;
+   margin: 0px 0px 0px 0px;
+}
+
+.div1 {
+   border-style: solid;
+   border-color: #b76d39;
+   width: 55%;
+   margin:auto;
+}

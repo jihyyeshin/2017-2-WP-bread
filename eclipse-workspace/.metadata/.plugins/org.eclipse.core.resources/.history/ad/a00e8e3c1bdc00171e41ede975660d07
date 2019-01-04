@@ -1,0 +1,44 @@
+
+/*login 창에 사용*/
+table, tr, td {
+	background-color: bisque;
+	text-align: center;
+}
+
+table {
+	margin: 0 auto;
+	border: 2px solid #b76d39;
+	padding: 0px 10px 0px 0px;
+}
+td{
+	 align: center;
+	 magin: 100px;
+}
+/*login button에 사용*/
+.button {
+    background-color: #b76d39;
+    font-family: Cambria;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+/*login 글씨*/
+.p4 {
+	font-family: Cambria;
+	font-size: 30px;
+	color: maroon;
+	text-align: center;
+	margin: 0px 0px 0px 0px;
+}

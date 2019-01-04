@@ -1,0 +1,76 @@
+<%@ page language="java" contentType="text/html; charset=euc-kr"
+	pageEncoding="euc-kr"%>
+<%@ page import="java.sql.*"%>
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript">
+	/* Demo purposes only */
+	$(".hover").mouseleave(function() {
+		$(this).removeClass("hover");
+	});
+</script>
+<title>Mr.Bread</title>
+</head>
+
+<body>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="content.css" /> -->
+	<div id="container">
+		<div>
+			<ul class="h">
+				<li class="h"><a class="h" href="home.jsp">HOME</a></li>
+				<li class="h"><a class="h" href="content.jsp">CONTENT</a></li>
+				<li class="h"><a class="h" href="order.jsp">ORDER</a></li>
+				<li class="h"><a class="h" href="about.jsp">ABOUT</a></li>
+				<li class="h"><a class="h" href="notice.jsp">NOTICE</a></li>
+			</ul>
+		</div>
+		<br /> <br /> <br />
+
+		<div id="main">
+			<br>
+			<p class="p1">
+				Bread
+				</p1>
+			<hr width="8%" color="darkred" size="2px" />
+
+			<div>
+				<center>
+					<br> <img src="6.jpg" onmouseover="this.src='06.jpg';"
+						onmouseout="this.src='6.jpg'" ;/>&nbsp&nbsp&nbsp <img src="7.jpg"
+						onmouseover="this.src='07.jpg';" onmouseout="this.src='7.jpg'" ;/>&nbsp&nbsp&nbsp
+					<img src="8.jpg" onmouseover="this.src='08.jpg';"
+						onmouseout="this.src='8.jpg'" ;/><br> <br> <img
+						src="9.jpg" onmouseover="this.src='09.jpg';"
+						onmouseout="this.src='9.jpg'" ;/>&nbsp&nbsp&nbsp <img
+						src="10.jpg" onmouseover="this.src='010.jpg';"
+						onmouseout="this.src='10.jpg'" ;/>&nbsp&nbsp&nbsp <img
+						src="11.jpg" onmouseover="this.src='011.jpg';"
+						onmouseout="this.src='11.jpg'" ;/>
+
+
+					<!--<figure class="snip1200">
+						<img
+							src="6.jpg"
+							alt="sq-sample27" />
+						<figcaption>
+							<p>I say, if your knees aren't green by the end of the day,
+								you ought to seriously re-examine your life.</p>
+							<div class="heading">
+								<h2>
+									My<span> Hobby</span>
+								</h2>
+							</div>
+						</figcaption>
+						<a href="#"></a>
+					</figure>  -->
+
+
+				</center>
+				<div></div>
+
+			</div>
+</body>
+</html>

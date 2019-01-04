@@ -1,0 +1,10 @@
+/*login 창에 사용*/
+table, tr, td {
+   background-color: bisque;
+   text-align: center;
+}
+
+table {
+   margin: 0 auto;
+   padding: 0px 40px 0px 40px;
+}

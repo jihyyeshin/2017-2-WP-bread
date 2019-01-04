@@ -1,0 +1,51 @@
+@charset "EUC-KR";
+html,body{
+  height:100%;
+}
+body{
+  text-align:center;
+}
+body:before{
+  content:'';
+  height:100%;
+  display:inline-block;
+  vertical-align:middle;
+}
+button1{
+  font-family: Cambria;
+  background:#b76d39;
+  color:bisque;
+  border:none;
+  position:relative;
+  height:60px;
+    width:50%;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+button1:hover{
+  background:bisque;
+  color:#b76d39;
+}
+button1:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background:#b76d39;
+  transition:400ms ease all;
+}
+button1:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button1:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}

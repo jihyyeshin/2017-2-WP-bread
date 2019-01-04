@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="content.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+	$(".hover").mouseleave(function() {
+		$(this).removeClass("hover");
+	});
+<title>Insert title here</title>
+</head>
+<body>
+					<figure class="snip1200">
+						<img
+							src="6.jpg"
+							alt="sq-sample27" />
+						<figcaption>
+							<p>I say, if your knees aren't green by the end of the day,
+								you ought to seriously re-examine your life.</p>
+							<div class="heading">
+								<h2>
+									My<span> Hobby</span>
+								</h2>
+							</div>
+						</figcaption>
+						<a href="#"></a>
+					</figure>
+				</center>
+				<div></div>
+</body>
+</html>

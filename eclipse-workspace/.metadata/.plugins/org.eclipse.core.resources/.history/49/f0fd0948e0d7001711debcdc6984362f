@@ -1,0 +1,60 @@
+package q3;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+
+/**
+ * Servlet implementation class ClassServlet
+ */
+@WebServlet("/ClassServlet")
+public class ClassServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ClassServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		  
+		  String class1 = request.getParameter("class1");
+		  HttpSession session = request.getSession();  // session을 시작하는 메소드
+		  session.setAttribute("class1", class1); 
+		   // set 즉, class 라는 데이터명에 class의 값을 넣겠다라는 것
+		  response.setContentType("text/html;charset=euc-kr");
+		  PrintWriter out = response.getWriter();
+		  out.println("<html>");
+		  out.println("<head><title>q3</title></head>");
+		  out.println("<body>");
+		  out.println("<h3>time?</h3>");
+		  out.println("<form action=http://localhost:8080/Servlet/ResultServlet>");
+		  out.println("<input type=textfield name=time>");
+		  out.println("<input type=submit value='submit'>");
+		  out.println("</form>");
+		  out.println("</body>");
+		  out.println("</html>");
+		 }
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

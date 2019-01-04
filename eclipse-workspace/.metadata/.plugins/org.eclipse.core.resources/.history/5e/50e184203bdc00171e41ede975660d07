@@ -1,0 +1,75 @@
+package pj1;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.catalina.Session;
+
+@WebServlet("/LoginAction")
+
+public class LoginAction extends HttpServlet {
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+ /*String log = request.getParameter("login");
+
+Hw hw = new Hw();
+String str = hw.logPrint(log);*/
+
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html");
+response.setCharacterEncoding("UTF-8");
+
+PrintWriter out = response.getWriter();
+//요청시 매개변수 "id"를 가져와 id 넣는다
+
+HttpSession session=req.getSession(boolean create);
+SessionInfo info=(SessionInfo)session.getAttribute("member");
+
+String id = request.getParameter("id");
+//요청시 매개변수 "pw"를 가져와 pw 넣는다
+
+String pw = request.getParameter("pw");
+
+/*boolean save = false;
+
+if(request.getParameter("save") != null){
+save = true;
+}*/
+//비지니스 레이어 호출(model layer)
+
+Dao dao = new Dao();
+if(dao.login(id, pw)){
+/*if(save){
+Cookie idCookie = new Cookie("id", id);
+idCookie.setMaxAge(60*60*24);
+response.addCookie(idCookie);
+
+Cookie pwCookie = new Cookie("pw", pw);
+pwCookie.setMaxAge(60*60*24);
+response.addCookie(pwCookie);
+}*/
+//id,pw가 맞다면 메세지로 success 출력
+request.setAttribute("msg", id);
+RequestDispatcher rd = request.getRequestDispatcher("/login_welcome.jsp");
+rd.forward(request, response);
+
+}else{
+//id,pw가 아니다면 메세지로 fail 출력
+RequestDispatcher rd = request.getRequestDispatcher("/login_fail.jsp");
+rd.forward(request, response);
+}
+// request + alpha
+/*request.setAttribute("answer", str);
+*/
+//"/login_view.jsp"로 요청을 다른 서블릿으로 보내줌
+/*RequestDispatcher rd = request.getRequestDispatcher("/login_welcome.jsp");
+rd.forward(request, response);*/
+}
+}

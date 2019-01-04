@@ -1,0 +1,16 @@
+package pj1;
+
+public class Dao {
+public boolean login(String id, String pw){
+// db에서 가져온 값
+
+String dbId = "admin";
+String dbPw = "1234";
+
+if(id.equals(dbId) && pw.equals(dbPw)){
+//id&pw가 일치할 경우 값을 남긴다
+return true;
+}//일치하지 않는 경우 남기지 않는다
+return false;
+}
+}

@@ -1,0 +1,41 @@
+package pj1;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/NoticeLogin")
+
+
+public class NoticeLogin extends HttpServlet {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html");
+response.setCharacterEncoding("UTF-8");
+
+PrintWriter out = response.getWriter();
+//요청시 매개변수 "id"를 가져와 id 넣는다
+
+String id = request.getParameter("id");
+//요청시 매개변수 "pw"를 가져와 pw 넣는다
+
+String pw = request.getParameter("pw");
+Dao2 dao = new Dao2();
+if(dao.login(id, pw)){
+	RequestDispatcher rd = request.getRequestDispatcher("/notice.jsp");
+	rd.forward(request, response);
+}
+else
+{
+	RequestDispatcher rd = request.getRequestDispatcher("/notice_admin.jsp");
+	rd.forward(request, response);
+}
+}
+}

@@ -1,0 +1,78 @@
+package pj1;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.catalina.Session;
+
+@WebServlet("/LoginAction")
+
+public class LoginAction extends HttpServlet {
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html");
+response.setCharacterEncoding("UTF-8");
+
+//PrintWriter out = response.getWriter();
+//요청시 매개변수 "id"를 가져와 id 넣는다
+
+String id = request.getParameter("id");
+//요청시 매개변수 "pw"를 가져와 pw 넣는다
+
+String pw = request.getParameter("pw");
+
+boolean save = false;
+
+if(request.getParameter("save") != null){
+save = true;
+}
+/*else
+{
+    // 전체 쿠키 삭제하기
+    Cookie[] cookies = request.getCookies() ;
+     
+    if(cookies != null){
+        for(int i=0; i < cookies.length; i++){
+             
+            // 쿠키의 유효시간을 0으로 설정하여 만료시킨다
+            cookies[i].setMaxAge(0) ;
+             
+            // 응답 헤더에 추가한다
+            response.addCookie(cookies[i]) ;
+        }
+    }
+}*/
+//비지니스 레이어 호출(model layer)
+
+Dao dao = new Dao();
+if(dao.login(id, pw)){
+/*if(save){
+Cookie idCookie = new Cookie("id", id);
+idCookie.setMaxAge(60*60*24);
+response.addCookie(idCookie);
+
+Cookie pwCookie = new Cookie("pw", pw);
+pwCookie.setMaxAge(60*60*24);
+response.addCookie(pwCookie);
+}*/
+//id,pw가 맞다면 메세지로 success 출력
+request.setAttribute("msg", id);
+RequestDispatcher rd = request.getRequestDispatcher("/login_welcome.jsp");
+rd.forward(request, response);
+
+}else{
+//id,pw가 아니다면 메세지로 fail 출력
+RequestDispatcher rd = request.getRequestDispatcher("/login_fail.jsp");
+rd.forward(request, response);
+}
+}
+}
